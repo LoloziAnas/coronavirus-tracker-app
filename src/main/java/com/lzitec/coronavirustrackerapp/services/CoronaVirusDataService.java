@@ -12,7 +12,10 @@ import java.net.URL;
 @Service
 public class CoronaVirusDataService {
 
-    private static final String DATA_URL = "URLConnection";
+    private static final String DATA_URL = "" +
+            "https://raw.githubusercontent.com/CSSEGISandData/" +
+            "COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/" +
+            "time_series_covid19_confirmed_US.csv";
     private static final String GET = "GET";
 
     @PostConstruct
@@ -27,7 +30,9 @@ public class CoronaVirusDataService {
         StringBuilder content = new StringBuilder();
         while ((inputLine = in.readLine()) != null) {
             content.append(inputLine);
+
         }
+        System.out.println(content);
         in.close();
 
     }
